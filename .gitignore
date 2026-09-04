@@ -1,0 +1,25 @@
+# Maven build target directory
+target/
+*.jar
+*.war
+*.ear
+
+# IDE specific files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# Temporary & Database files
+*.db
+*.log
+*.tmp
+
+# Scratch files
+scratch/
