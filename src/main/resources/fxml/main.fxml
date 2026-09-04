@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="780.0" prefWidth="1180.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gradebook.controller.MainController">
+   <left>
+      <VBox prefWidth="250.0" styleClass="sidebar" spacing="14.0" BorderPane.alignment="CENTER">
+         <children>
+            <!-- Logo / Brand Section -->
+            <VBox spacing="2.0">
+               <padding>
+                  <Insets bottom="6.0" left="4.0" right="4.0" top="2.0" />
+               </padding>
+               <children>
+                  <Label styleClass="brand-title" text="GradeTracker" />
+                  <Label styleClass="brand-subtitle" text="Academic Evaluation Suite" />
+               </children>
+            </VBox>
+
+            <!-- Faculty Profile Card -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="faculty-card">
+               <children>
+                  <StackPane styleClass="faculty-avatar">
+                     <children>
+                        <Label style="-fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-font-size: 13px;" text="DB" />
+                     </children>
+                  </StackPane>
+                  <VBox spacing="1.0">
+                     <children>
+                        <Label style="-fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-font-size: 13px;" text="Dr. Bhumika" />
+                        <Label style="-fx-text-fill: #94a3b8; -fx-font-size: 11px;" text="Assistant Professor, CSE" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Navigation Buttons -->
+            <VBox spacing="4.0">
+               <children>
+                  <Button fx:id="btnDashboard" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showDashboard" styleClass="nav-button" text="📊  Gradebook Matrix" />
+                  <Button fx:id="btnRoster" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showRoster" styleClass="nav-button" text="👨‍🎓  Manage Roster" />
+                  <Button fx:id="btnSubjects" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showSubjects" styleClass="nav-button" text="📚  Manage Subjects" />
+               </children>
+            </VBox>
+
+            <!-- Session Details Panel -->
+            <VBox spacing="6.0" styleClass="sidebar-card">
+               <children>
+                  <Label text="SESSION DETAILS" styleClass="sidebar-card-header" />
+                  <VBox spacing="4.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="sidebar-card-key" text="Academic Year" />
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label styleClass="sidebar-card-val" text="2025–2026" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="sidebar-card-key" text="Semester" />
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label styleClass="sidebar-card-val" text="Semester IV" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="sidebar-card-key" text="Batch" />
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label styleClass="sidebar-card-val" text="CSE Section A" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <!-- Top Header Bar -->
+            <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="top-header">
+               <children>
+                  <Label styleClass="header-title" text="🎓 Student Grade Tracker" />
+                  <Label styleClass="header-badge-gold" text="Apex Institute of Technology" />
+               </children>
+            </HBox>
+            
+            <!-- Dynamic Content Area -->
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS" styleClass="content-pane" />
+         </children>
+      </VBox>
+   </center>
+
+   <bottom>
+      <HBox alignment="CENTER_LEFT" styleClass="status-footer" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="status-footer-text" text="System Status: Ready (In-Memory Mode)" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label styleClass="status-footer-text" text="Apex Institute of Technology - Academic Evaluation Suite" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
